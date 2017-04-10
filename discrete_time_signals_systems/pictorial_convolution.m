@@ -1,4 +1,12 @@
 %% Pictorial Illustration of Convolution
+% Show a pictorial illustration of the convolution sum
+% y[n] = x[n] * h[n]
+%
+% Generate the x[n] and h[n] in the next section
+%
+% Anas Salah Eddin, 2017
+%
+%
 close all; clear all;
 
 %% Generate sequences
