@@ -10,13 +10,14 @@
 %
 close all; clear all;
 
-%% Generate sequences
+%% Generate sequences (change these if necessary)
 x_of_n1 = [6, 5, 4, 3, 2, 1];
 n1 = 0:length(x_of_n1) - 1;
 
 h_of_n2 = 1/3 * [1 1 1];
 n2 = 0:length(h_of_n2) - 1;
 
+%% Move the sequences to index k
 x_of_k1 = x_of_n1;
 k1 = n1;
 
@@ -26,10 +27,10 @@ k1 = n1;
 
 % shift limits
 lower_shift_limit = k1(1) - k2(end) - 1;
-upper_shift_limit = k1(end) + length(k2);
+upper_shift_limit = k1(end) + find(~k2);
 
 % initialize y
-n = lower_shift_limit:k1(end) + length(k2) ;
+n = lower_shift_limit:upper_shift_limit ;
 y = zeros(size(n));
 y_index = 1;
 
