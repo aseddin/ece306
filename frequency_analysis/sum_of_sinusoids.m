@@ -29,7 +29,7 @@ subplot(6,1,4); plot(x,y); title('Generated Signal');
 %% plotting (non-Centered) Fourier Transform of the summed signal
 
 Y = fft(y);
-Y = abs(Y); %Fourier Power Spectrum
+Y = abs(Y); %Fourier Mag Spectrum
 f = Fs * linspace(0,1,size(y,2));
 subplot(6,1,5); plot(f, Y);title('Fourier Transform')
 
@@ -40,7 +40,7 @@ for i=1:size(y,2)
     centered_y(i) = y(i) * (-1) .^ i;    
 end
 Y = fft(centered_y);
-Y = abs(Y); %Fourier Power Spectrum
+Y = abs(Y); %Fourier Mag Spectrum
 f = Fs * linspace(-.5,.5,size(y,2));
 subplot(6,1,6); plot(f, Y);title('Centered Fourier Transform')
 
